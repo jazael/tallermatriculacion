@@ -8,7 +8,7 @@ package com.ingenieria.models;
  *
  * @author miguelfaubla
  */
-public class Producto {
+public class Alumno {
    private int id;
     private String nombre;
     private String descripcion;

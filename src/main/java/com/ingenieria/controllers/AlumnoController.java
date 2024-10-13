@@ -5,7 +5,7 @@
 package com.ingenieria.controllers;
 
 import com.ingenieria.managementdb.ConnectionDriver;
-import com.ingenieria.models.Producto;
+import com.ingenieria.models.Alumno;
 import com.ingenieria.services.AlumnoDAO;
 import java.awt.HeadlessException;
 import java.io.BufferedInputStream;
@@ -51,7 +51,7 @@ public class AlumnoController {
             JOptionPane.showMessageDialog(null, "Estimado usuario los campos son obligatorios");
         } else {
             try {
-                Producto producto = this.productoDAO.insertarProducto(nombre, descripcion, precio, stock, unidadmedida);
+                Alumno producto = this.productoDAO.insertarProducto(nombre, descripcion, precio, stock, unidadmedida);
                 if (producto != null) {
                     JOptionPane.showMessageDialog(null, "Los datos del producto se ingresaron correctamente");
 

@@ -8,11 +8,11 @@ package com.ingenieria.models;
  *
  * @author miguelfaubla
  */
-public class Movimiento {
+public class Matriculacion {
 
     private int id;
     private Integer producto_id;
-    private Producto producto;
+    private Alumno producto;
     private String tipomovimiento;
     private Double cantidad;
     private String fecha;
@@ -37,11 +37,11 @@ public class Movimiento {
         this.producto_id = producto_id;
     }
     
-    public Producto getProducto() {
+    public Alumno getProducto() {
         return producto;
     }
 
-    public void setProducto(Producto producto) {
+    public void setProducto(Alumno producto) {
         this.producto = producto;
     }
 

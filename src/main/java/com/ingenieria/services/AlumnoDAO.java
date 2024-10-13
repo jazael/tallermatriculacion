@@ -9,7 +9,7 @@ import static com.ingenieria.managementdb.ConnectionDriver.closeStatement;
 import static com.ingenieria.managementdb.ConnectionDriver.getConnection;
 import com.ingenieria.managementdb.DatabaseConnectException;
 import com.ingenieria.models.DTOProductoJComboBox;
-import com.ingenieria.models.Producto;
+import com.ingenieria.models.Alumno;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,8 +32,8 @@ public class AlumnoDAO {
         this.connection = getConnection();
     }
 
-    public Producto insertarProducto(String nombre, String descripcion, String precio, String stock, String unidadMedida) {
-        Producto producto = null;
+    public Alumno insertarProducto(String nombre, String descripcion, String precio, String stock, String unidadMedida) {
+        Alumno producto = null;
         String query = "INSERT INTO producto (nombre, descripcion, precio, stock, unidadmedida) VALUES (?, ?, ?, ?, ?) RETURNING *";
 
         try {
@@ -49,7 +49,7 @@ public class AlumnoDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                producto = new Producto();
+                producto = new Alumno();
                 producto.setNombre(rs.getString("nombre"));
                 producto.setDescripcion(rs.getString("descripcion"));
                 producto.setPrecio(rs.getDouble("precio"));

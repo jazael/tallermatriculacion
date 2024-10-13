@@ -6,7 +6,7 @@ package com.ingenieria.controllers;
 
 import com.ingenieria.managementdb.ConnectionDriver;
 import com.ingenieria.models.DTOProductoJComboBox;
-import com.ingenieria.models.Movimiento;
+import com.ingenieria.models.Matriculacion;
 import com.ingenieria.services.MatriculacionDAO;
 import java.awt.HeadlessException;
 import java.io.BufferedInputStream;
@@ -55,7 +55,7 @@ public class MatriculacionController {
             JOptionPane.showMessageDialog(null, "Estimado usuario los campos son obligatorios");
         } else {
             try {
-                Movimiento movimiento = this.movimientoDAO.insertarMovimiento(codigoproducto, tipomovimiento, cantidad, fechaingreso, responsable);
+                Matriculacion movimiento = this.movimientoDAO.insertarMovimiento(codigoproducto, tipomovimiento, cantidad, fechaingreso, responsable);
                 if (movimiento != null) {
                     JOptionPane.showMessageDialog(null, "Los datos del movimiento se ingresaron correctamente");
 

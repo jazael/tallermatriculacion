@@ -8,7 +8,7 @@ import static com.ingenieria.managementdb.ConnectionDriver.closeResultSet;
 import static com.ingenieria.managementdb.ConnectionDriver.closeStatement;
 import static com.ingenieria.managementdb.ConnectionDriver.getConnection;
 import com.ingenieria.managementdb.DatabaseConnectException;
-import com.ingenieria.models.Movimiento;
+import com.ingenieria.models.Matriculacion;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -33,8 +33,8 @@ public class MatriculacionDAO {
         this.productoDAO = new AlumnoDAO();
     }
 
-    public Movimiento insertarMovimiento(Integer codigoproducto, String tipomovimiento, String cantidad, String fecha, String responsable) {
-        Movimiento movimiento = null;
+    public Matriculacion insertarMovimiento(Integer codigoproducto, String tipomovimiento, String cantidad, String fecha, String responsable) {
+        Matriculacion movimiento = null;
         String query = "INSERT INTO movimiento (producto_id, tipomovimiento, cantidad, fecha, responsable) VALUES (?, ?, ?, ?, ?) RETURNING *";
 
         try {
@@ -52,7 +52,7 @@ public class MatriculacionDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                movimiento = new Movimiento();
+                movimiento = new Matriculacion();
                 movimiento.setProducto_id(rs.getInt("producto_id"));
                 movimiento.setTipomovimiento(rs.getString("tipomovimiento"));
                 movimiento.setCantidad(rs.getDouble("cantidad"));

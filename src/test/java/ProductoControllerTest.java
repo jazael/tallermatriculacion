@@ -1,5 +1,5 @@
 import com.ingenieria.controllers.AlumnoController;
-import com.ingenieria.models.Producto;
+import com.ingenieria.models.Alumno;
 import com.ingenieria.services.AlumnoDAO;
 import com.ingenieria.utilsmanager.JOptionPaneUtil;
 import static org.mockito.Mockito.*;
@@ -33,7 +33,7 @@ public class ProductoControllerTest {
         cbounidadmedida.setSelectedItem("kg");
 
         when(mockProductoDAO.insertarProducto(anyString(), anyString(), anyString(), anyString(), anyString()))
-                .thenReturn(new Producto());
+                .thenReturn(new Alumno());
 
         productoController.insertarProducto(txtnombre, txtdescripcion, txtprecio, txtstock, cbounidadmedida);
 
