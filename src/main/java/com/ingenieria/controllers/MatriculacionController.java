@@ -5,7 +5,7 @@
 package com.ingenieria.controllers;
 
 import com.ingenieria.managementdb.ConnectionDriver;
-import com.ingenieria.models.DTOProductoJComboBox;
+import com.ingenieria.models.DTOAlumnoJComboBox;
 import com.ingenieria.models.Matriculacion;
 import com.ingenieria.services.MatriculacionDAO;
 import java.awt.HeadlessException;
@@ -44,7 +44,7 @@ public class MatriculacionController {
     }
 
     public void insertarMovimiento(JComboBox cbocodigoproducto, JComboBox cbotipomovimiento, JTextField txtcantidad, JFormattedTextField txtfechaingreso, JComboBox cboresponsable) {
-        DTOProductoJComboBox productoSeleccionado = (DTOProductoJComboBox) cbocodigoproducto.getSelectedItem();
+        DTOAlumnoJComboBox productoSeleccionado = (DTOAlumnoJComboBox) cbocodigoproducto.getSelectedItem();
         Integer codigoproducto = productoSeleccionado.getId();
         String tipomovimiento = String.valueOf(cbotipomovimiento.getSelectedItem());
         String cantidad = txtcantidad.getText();
@@ -73,7 +73,7 @@ public class MatriculacionController {
     }
 
     public void editarMovimiento(Integer id, JComboBox cbocodigoproducto, JComboBox cbotipomovimiento, JTextField txtcantidad, JFormattedTextField txtfechaingreso, JComboBox cboresponsable) {
-        DTOProductoJComboBox productoSeleccionado = (DTOProductoJComboBox) cbocodigoproducto.getSelectedItem();
+        DTOAlumnoJComboBox productoSeleccionado = (DTOAlumnoJComboBox) cbocodigoproducto.getSelectedItem();
         Integer codigoproducto = productoSeleccionado.getId();
         String tipomovimiento = String.valueOf(cbotipomovimiento.getSelectedItem());
         String cantidad = txtcantidad.getText();
@@ -144,7 +144,7 @@ public class MatriculacionController {
                 int productoId = Integer.parseInt((String) tblMovimiento.getValueAt(fila, 5));
                 String productoNombre = (String) tblMovimiento.getValueAt(fila, 6);
 
-                cboproducto.setSelectedItem(new DTOProductoJComboBox(productoId, productoNombre));
+                cboproducto.setSelectedItem(new DTOAlumnoJComboBox(productoId, productoNombre));
 
                 cbotipomovimiento.setSelectedItem(tblMovimiento.getValueAt(fila, 1));
                 txtcantidad.setText(tblMovimiento.getValueAt(fila, 2).toString());

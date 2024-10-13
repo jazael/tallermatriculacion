@@ -8,7 +8,7 @@ import static com.ingenieria.managementdb.ConnectionDriver.closeResultSet;
 import static com.ingenieria.managementdb.ConnectionDriver.closeStatement;
 import static com.ingenieria.managementdb.ConnectionDriver.getConnection;
 import com.ingenieria.managementdb.DatabaseConnectException;
-import com.ingenieria.models.DTOProductoJComboBox;
+import com.ingenieria.models.DTOAlumnoJComboBox;
 import com.ingenieria.models.Alumno;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -191,11 +191,11 @@ public class AlumnoDAO {
             String query = "select id, nombre from producto where estado = true";
             PreparedStatement stmt = this.connection.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
-            productos.addItem(new DTOProductoJComboBox(0, "Seleccione el Producto"));
+            productos.addItem(new DTOAlumnoJComboBox(0, "Seleccione el Producto"));
             while (rs.next()) {
                 int codigoProducto = rs.getInt("id");
                 String nombreProducto = rs.getString("nombre");
-                productos.addItem(new DTOProductoJComboBox(codigoProducto, nombreProducto));
+                productos.addItem(new DTOAlumnoJComboBox(codigoProducto, nombreProducto));
             }
 
             closeStatement(stmt);

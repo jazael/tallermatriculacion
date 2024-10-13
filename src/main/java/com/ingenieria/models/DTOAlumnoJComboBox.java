@@ -10,12 +10,12 @@ import java.util.Objects;
  *
  * @author miguelfaubla
  */
-public class DTOProductoJComboBox {
+public class DTOAlumnoJComboBox {
 
     private final int id;
     private final String nombre;
 
-    public DTOProductoJComboBox(int id, String nombre) {
+    public DTOAlumnoJComboBox(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -33,7 +33,7 @@ public class DTOProductoJComboBox {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DTOProductoJComboBox that = (DTOProductoJComboBox) o;
+        DTOAlumnoJComboBox that = (DTOAlumnoJComboBox) o;
         return id == that.id;  // Compara solo el ID o los atributos que consideres necesarios
     }
 
