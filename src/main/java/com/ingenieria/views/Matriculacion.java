@@ -4,8 +4,8 @@
  */
 package com.ingenieria.views;
 
-import com.ingenieria.controllers.MovimientosController;
-import com.ingenieria.controllers.ProductoController;
+import com.ingenieria.controllers.MatriculacionController;
+import com.ingenieria.controllers.AlumnoController;
 import com.ingenieria.utilsmanager.UtilsManager;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -15,7 +15,7 @@ import java.util.Date;
  *
  * @author miguelfaubla
  */
-public class Movimientos extends javax.swing.JDialog {
+public class Matriculacion extends javax.swing.JDialog {
 
     String[] loadTipoMovimiento = {"Seleccione Tipo Movimiento", "EGRESO", "INGRESO"};
     String[] loadResponsable = {"Seleccione Responsable", "JEFE INVENTARIO", "BODEGUERO", "ANALISTA DE BODEGA", "ESPECIALISTA INVENTARIO"};
@@ -23,15 +23,15 @@ public class Movimientos extends javax.swing.JDialog {
     /**
      * Creates new form Movimientos
      */
-    public Movimientos() {
+    public Matriculacion() {
         initComponents();
         UtilsManager.loadingCbo(cbotipomovimiento, loadTipoMovimiento);
         UtilsManager.loadingCbo(cboresponsable, loadResponsable);
 
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         productoController.cargarComboProductos(cboproducto);
 
-        MovimientosController movimientoController = new MovimientosController();
+        MatriculacionController movimientoController = new MatriculacionController();
         movimientoController.listarMovimientos(tblmovimientos);
 
         Date date = new Date();
@@ -244,7 +244,7 @@ public class Movimientos extends javax.swing.JDialog {
 
     private void tblmovimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblmovimientosMouseClicked
         // TODO add your handling code here:
-        MovimientosController movimientoController = new MovimientosController();
+        MatriculacionController movimientoController = new MatriculacionController();
         movimientoController.seleccionarMovimiento(tblmovimientos, cboproducto, cbotipomovimiento, txtcantidad, txtfechamovimiento, cboresponsable);
 
         btnagregar.setEnabled(false);
@@ -255,14 +255,14 @@ public class Movimientos extends javax.swing.JDialog {
     }//GEN-LAST:event_tblmovimientosMouseClicked
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        MovimientosController movimientoController = new MovimientosController();
+        MatriculacionController movimientoController = new MatriculacionController();
         movimientoController.insertarMovimiento(cboproducto, cbotipomovimiento, txtcantidad, txtfechamovimiento, cboresponsable);
         movimientoController.listarMovimientos(tblmovimientos);
     }//GEN-LAST:event_btnagregarActionPerformed
 
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         // TODO add your handling code here:
-        MovimientosController movimientoController = new MovimientosController();
+        MatriculacionController movimientoController = new MatriculacionController();
         int fila = tblmovimientos.getSelectedRow();
         int id = Integer.parseInt(tblmovimientos.getValueAt(fila, 0).toString());
         movimientoController.editarMovimiento(id, cboproducto, cbotipomovimiento, txtcantidad, txtfechamovimiento, cboresponsable);
@@ -271,7 +271,7 @@ public class Movimientos extends javax.swing.JDialog {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-        MovimientosController movimientoController = new MovimientosController();
+        MatriculacionController movimientoController = new MatriculacionController();
         int fila = tblmovimientos.getSelectedRow();
         int id = Integer.parseInt(tblmovimientos.getValueAt(fila, 0).toString());
         movimientoController.eliminarMovimiento(id);
@@ -316,20 +316,21 @@ public class Movimientos extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Movimientos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Matriculacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Movimientos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Matriculacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Movimientos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Matriculacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Movimientos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Matriculacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Movimientos().setVisible(true);
+                new Matriculacion().setVisible(true);
             }
         });
     }

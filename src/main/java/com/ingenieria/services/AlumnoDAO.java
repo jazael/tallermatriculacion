@@ -24,11 +24,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author miguelfaubla
  */
-public class ProductoDAO {
+public class AlumnoDAO {
 
     private final Connection connection;
 
-    public ProductoDAO() {
+    public AlumnoDAO() {
         this.connection = getConnection();
     }
 
@@ -61,7 +61,7 @@ public class ProductoDAO {
             closeResultSet(rs);
 
         } catch (SQLException e) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -98,7 +98,7 @@ public class ProductoDAO {
             closeStatement(selectStmt);
             closeStatement(updateStmt);
         } catch (SQLException e) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -127,7 +127,7 @@ public class ProductoDAO {
 
             closeStatement(stmt);
         } catch (SQLException e) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -152,7 +152,7 @@ public class ProductoDAO {
 
             closeStatement(stmt);
         } catch (SQLException e) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -178,7 +178,7 @@ public class ProductoDAO {
                 modeloProducto.addRow(datos);
             }
         } catch (SQLException e) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -201,7 +201,7 @@ public class ProductoDAO {
             closeStatement(stmt);
             closeResultSet(rs);
         } catch (SQLException e) {
-            Logger.getLogger(MovimientoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(MatriculacionDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
     }

@@ -8,8 +8,8 @@ package com.ingenieria.views;
  *
  * @author Usuario
  */
-import com.ingenieria.controllers.MovimientosController;
-import com.ingenieria.controllers.ProductoController;
+import com.ingenieria.controllers.MatriculacionController;
+import com.ingenieria.controllers.AlumnoController;
 import java.awt.Graphics;
 import java.util.Locale;
 import javax.swing.*;
@@ -140,7 +140,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        Productos productos = new Productos();
+        Alumno productos = new Alumno();
         productos.setModal(true);
         productos.setVisible(true);
 
@@ -157,21 +157,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        ProductoController productoController= new ProductoController();
+        AlumnoController productoController= new AlumnoController();
         JasperPrint jp = productoController.reporteProducto();
         JasperViewer.viewReport(jp, false, Locale.ENGLISH);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        Movimientos movimientos = new Movimientos();
+        Matriculacion movimientos = new Matriculacion();
         movimientos.setModal(true);
         movimientos.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        MovimientosController movimientosController= new MovimientosController();
+        MatriculacionController movimientosController= new MatriculacionController();
         JasperPrint jp = movimientosController.reporteProducto();
         JasperViewer.viewReport(jp, false, Locale.ENGLISH);
     }//GEN-LAST:event_jMenuItem6ActionPerformed

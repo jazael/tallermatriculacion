@@ -1,6 +1,6 @@
-import com.ingenieria.controllers.ProductoController;
+import com.ingenieria.controllers.AlumnoController;
 import com.ingenieria.models.Producto;
-import com.ingenieria.services.ProductoDAO;
+import com.ingenieria.services.AlumnoDAO;
 import com.ingenieria.utilsmanager.JOptionPaneUtil;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,14 +10,14 @@ import org.junit.jupiter.api.Test;
 
 public class ProductoControllerTest {
     
-    private ProductoController productoController;
-    private ProductoDAO mockProductoDAO;
+    private AlumnoController productoController;
+    private AlumnoDAO mockProductoDAO;
     
     @BeforeEach
     public void setUp() {
-        mockProductoDAO = mock(ProductoDAO.class);
-        productoController = new ProductoController() {
-            public ProductoDAO getProductoDAO() {
+        mockProductoDAO = mock(AlumnoDAO.class);
+        productoController = new AlumnoController() {
+            public AlumnoDAO getProductoDAO() {
                 return mockProductoDAO;
             }
         };

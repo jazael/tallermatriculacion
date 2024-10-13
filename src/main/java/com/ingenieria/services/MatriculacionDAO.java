@@ -23,14 +23,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author miguelfaubla
  */
-public class MovimientoDAO {
+public class MatriculacionDAO {
 
     private final Connection connection;
-    private final ProductoDAO productoDAO;
+    private final AlumnoDAO productoDAO;
 
-    public MovimientoDAO() {
+    public MatriculacionDAO() {
         this.connection = getConnection();
-        this.productoDAO = new ProductoDAO();
+        this.productoDAO = new AlumnoDAO();
     }
 
     public Movimiento insertarMovimiento(Integer codigoproducto, String tipomovimiento, String cantidad, String fecha, String responsable) {
@@ -69,7 +69,7 @@ public class MovimientoDAO {
             closeResultSet(rs);
 
         } catch (SQLException e) {
-            Logger.getLogger(MovimientoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(MatriculacionDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -105,7 +105,7 @@ public class MovimientoDAO {
 
             closeStatement(stmt);
         } catch (SQLException e) {
-            Logger.getLogger(MovimientoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(MatriculacionDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -130,7 +130,7 @@ public class MovimientoDAO {
 
             closeStatement(stmt);
         } catch (SQLException e) {
-            Logger.getLogger(MovimientoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(MatriculacionDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 
@@ -184,7 +184,7 @@ public class MovimientoDAO {
             closeStatement(stmt);
             closeResultSet(rs);
         } catch (SQLException e) {
-            Logger.getLogger(MovimientoDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(MatriculacionDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new DatabaseConnectException(e.getMessage());
         }
 

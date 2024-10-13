@@ -6,7 +6,7 @@ package com.ingenieria.controllers;
 
 import com.ingenieria.managementdb.ConnectionDriver;
 import com.ingenieria.models.Producto;
-import com.ingenieria.services.ProductoDAO;
+import com.ingenieria.services.AlumnoDAO;
 import java.awt.HeadlessException;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -32,12 +32,12 @@ import net.sf.jasperreports.engine.util.JRLoader;
  *
  * @author miguelfaubla
  */
-public class ProductoController {
+public class AlumnoController {
 
-    private final ProductoDAO productoDAO;
+    private final AlumnoDAO productoDAO;
 
-    public ProductoController() {
-        this.productoDAO = new ProductoDAO();
+    public AlumnoController() {
+        this.productoDAO = new AlumnoDAO();
     }
 
     public void insertarProducto(JTextField txtnombre, JTextField txtdescripcion, JTextField txtprecio, JTextField txtstock, JComboBox cbounidadmedida) {
@@ -152,13 +152,13 @@ public class ProductoController {
     }
 
     public JasperPrint reporteProducto() {
-        URL resourceUrl = ProductoController.class.getResource("/reports/Productos.jasper");
+        URL resourceUrl = AlumnoController.class.getResource("/reports/Productos.jasper");
         File reporte = null;
         
         try {
             reporte = new File(resourceUrl.toURI());
         } catch (URISyntaxException ex) {
-            Logger.getLogger(ProductoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AlumnoController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         if (!reporte.exists()) {

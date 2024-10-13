@@ -7,9 +7,7 @@ package com.ingenieria.controllers;
 import com.ingenieria.managementdb.ConnectionDriver;
 import com.ingenieria.models.DTOProductoJComboBox;
 import com.ingenieria.models.Movimiento;
-import com.ingenieria.models.Producto;
-import com.ingenieria.services.MovimientoDAO;
-import com.ingenieria.services.ProductoDAO;
+import com.ingenieria.services.MatriculacionDAO;
 import java.awt.HeadlessException;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -37,12 +35,12 @@ import net.sf.jasperreports.engine.util.JRLoader;
  *
  * @author miguelfaubla
  */
-public class MovimientosController {
+public class MatriculacionController {
 
-    private final MovimientoDAO movimientoDAO;
+    private final MatriculacionDAO movimientoDAO;
 
-    public MovimientosController() {
-        this.movimientoDAO = new MovimientoDAO();
+    public MatriculacionController() {
+        this.movimientoDAO = new MatriculacionDAO();
     }
 
     public void insertarMovimiento(JComboBox cbocodigoproducto, JComboBox cbotipomovimiento, JTextField txtcantidad, JFormattedTextField txtfechaingreso, JComboBox cboresponsable) {
@@ -163,13 +161,13 @@ public class MovimientosController {
     }
     
     public JasperPrint reporteProducto() {
-        URL resourceUrl = ProductoController.class.getResource("/reports/Movimientos.jasper");
+        URL resourceUrl = AlumnoController.class.getResource("/reports/Movimientos.jasper");
         File reporte = null;
         
         try {
             reporte = new File(resourceUrl.toURI());
         } catch (URISyntaxException ex) {
-            Logger.getLogger(ProductoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AlumnoController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         if (!reporte.exists()) {

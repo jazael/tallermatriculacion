@@ -4,21 +4,21 @@
  */
 package com.ingenieria.views;
 
-import com.ingenieria.controllers.ProductoController;
+import com.ingenieria.controllers.AlumnoController;
 
 /**
  *
  * @author miguelfaubla
  */
-public class Productos extends javax.swing.JDialog {
+public class Alumno extends javax.swing.JDialog {
 
     /**
      * Creates new form Productos1
      */
-    public Productos() {
+    public Alumno() {
         initComponents();
 
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         productoController.listarProductos(tblproductos);
     }
 
@@ -244,7 +244,7 @@ public class Productos extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         productoController.insertarProducto(txtnombre, txtdescripcion, txtprecio, txtstock, cbounidadmedida);
         productoController.listarProductos(tblproductos);
     }//GEN-LAST:event_btnagregarActionPerformed
@@ -256,7 +256,7 @@ public class Productos extends javax.swing.JDialog {
 
     private void tblproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblproductosMouseClicked
         // TODO add your handling code here:
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         productoController.seleccionarProducto(tblproductos, txtnombre, txtdescripcion, txtprecio, txtstock, cbounidadmedida);
 
         btnagregar.setEnabled(false);
@@ -282,7 +282,7 @@ public class Productos extends javax.swing.JDialog {
 
     private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
         // TODO add your handling code here:
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         int fila = tblproductos.getSelectedRow();
         int id = Integer.parseInt(tblproductos.getValueAt(fila, 0).toString());
         productoController.editarProducto(id, txtnombre, txtdescripcion, txtprecio, txtstock, cbounidadmedida);
@@ -291,7 +291,7 @@ public class Productos extends javax.swing.JDialog {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         int fila = tblproductos.getSelectedRow();
         int id = Integer.parseInt(tblproductos.getValueAt(fila, 0).toString());
         productoController.eliminarProducto(id);
@@ -315,21 +315,23 @@ public class Productos extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Productos().setVisible(true);
+                new Alumno().setVisible(true);
             }
         });
     }

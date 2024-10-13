@@ -4,7 +4,7 @@
  */
 package com.ingenieria.views;
 
-import com.ingenieria.controllers.ProductoController;
+import com.ingenieria.controllers.AlumnoController;
 
 /**
  *
@@ -17,7 +17,7 @@ public class ProductosOld extends javax.swing.JFrame {
      */
     public ProductosOld() {
         initComponents();
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         productoController.listarProductos(tblproductos);
     }
 
@@ -226,7 +226,7 @@ public class ProductosOld extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        ProductoController productoController = new ProductoController();
+        AlumnoController productoController = new AlumnoController();
         productoController.insertarProducto(txtnombre, txtdescripcion, txtprecio, txtstock, cbounidadmedida);
         productoController.listarProductos(tblproductos);
     }//GEN-LAST:event_btnagregarActionPerformed
